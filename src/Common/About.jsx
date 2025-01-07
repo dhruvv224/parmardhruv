@@ -14,18 +14,29 @@ import {
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiRedux } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
-
+import axios from 'axios'
 const About = () => {
-const fetchData=()=>{
-  
-}
-useEffect(()=>{
-  fetchData()
-})
+  const formData = {
+    username: "emilys",
+    password: "emilyspass",
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.post("https://dummyjson.com/auth/login", formData);
+      console.log(response.data); // Log the actual response data
+    } catch (error) {
+      console.error("Error fetching data:", error.response?.data || error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []); // Empty depe
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 lg:py-8 md:py-6 py-4">
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
+      <div className="grid lg:grid-cols-2 grid-cols-1 justify-center gap-8">
         {/* Left Section: Creative Web Developer */}
         <motion.div
           className="lg:text-[80px] md:text-[60px] text-[40px]"

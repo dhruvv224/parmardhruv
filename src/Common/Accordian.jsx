@@ -33,15 +33,15 @@ const Accordion = () => {
 
   return (
     <motion.div initial={{opacity:0,y:-120}} whileInView={{opacity:1,y:0}} transition={{ease:easeInOut,duration:1.02}} className="max-w-[1200px] mx-auto p-4 lg:mt-[80px]">
-      <h1 className="text-4xl font-bold mb-2 text-white font-source-sans border-b border-white">
+      <h1 className="md:text-4xl text-2xl font-bold mb-0 lg:mb-2 text-white font-source-sans border-b border-white">
         Services
       </h1>
 
 
       {/* Grid Layout for Two Sections */}
-      <div className="grid grid-cols-10 gap-4">
+      <div className="grid  grid-cols-1 lg:grid-cols-10 gap-4">
         {/* Smaller Section */}
-        <div className="col-span-3  p-4 rounded-md">
+        <div className="col-span-3  lg:p-4 md:p-2 p-0 rounded-md">
           {/* <p className="text-white font-medium">This is the smaller section.</p> */}
         </div>
 
@@ -56,7 +56,7 @@ const Accordion = () => {
               >
                 <div>
                   <span className="text-white mr-2 font-montserrat">{`0${service.id}.`}</span>
-                  <span className="font-semibold text-[35px] text-white font-stinger_light tracking-wider">
+                  <span className="font-semibold text-xl lg:text-[35px] text-white font-stinger_light tracking-wider">
                     {service.title}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ const Accordion = () => {
                 style={{ overflow: "hidden" }}
                 whileInView={{ filter: "blur(0px)" }}
               >
-                <p className="mt-2 text-white px-4">{service.description}</p>
+                <p className="mt-2 text-white px-2 md:px-4">{service.description}</p>
               </motion.div>
             </div>
           ))}

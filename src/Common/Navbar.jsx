@@ -90,7 +90,7 @@ const Navbar = () => {
     </div>
 
     {/* Menu Items */}
-    <ul className="font-semibold text-white text-3xl space-y-8 mt-24 text-center font-joyride">
+    <ul className="font-semibold text-white text-xl space-y-8 mt-24 text-center font-joyride">
       <li>
         <Link
           to="/home"
